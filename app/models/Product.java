@@ -46,4 +46,39 @@ public class Product {
         return String.format("%s %s", ean, name);
     }
 
+    public static List<Product> findAll() {
+        return new ArreayList<Product>(products);
+    }
+
+
+    public static Product findByEan(String ean) {
+        for (Product candidate : products) {
+            if (candidate.ean.equals(ean)) {
+                return candidate;,
+            }
+        }
+        return null;
+    }
+
+    public static List<Product> findByname(String term){
+        final List<Product> results = new ArrayList<Product>();
+
+        for (Product candidate : products){
+            if (candidate.name.toLowerCase().contains(term.toLowerCase())){
+
+                results.add(candidate);
+            }
+        }
+        return  results;
+    }
+
+    public static boolean remove(Product product){
+        return products.remove(product);
+
+    }
+
+    public void save(){
+        products.remove(findByEan(this.ean));
+        products.add(this);
+    }
 }
