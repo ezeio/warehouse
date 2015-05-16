@@ -12,7 +12,9 @@ public class Products extends Controller {
 
 
     public static Result list(){
-        return TODO;
+
+
+        return ok();
     }
 
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+
+</body>
+</html>
+    -->
+
+    @(products: List[Products])
+    @main("Product catalogue"){
+
+    <h2>All products</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>EAN</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(product <- products){
+                <tr>
+                    <td>
+                        <a href="@routes.products.details(product.ean)"></a>
+                    </td>
+
+                    <td>
+                        <a href="@routes.products.details(product.ean)"></a>
+                    </td>
+
+                    <td>
+                        <a href="@routes.products.details(product.ean)"></a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
