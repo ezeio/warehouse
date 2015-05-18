@@ -3,8 +3,11 @@ package controllers;
 /**
  * Created by Ositadinma on 09/05/15.
  */
+import models.Product;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.products.*;
+import java.util.List;
 
 
 public class Products extends Controller {
@@ -12,9 +15,8 @@ public class Products extends Controller {
 
 
     public static Result list(){
-
-
-        return ok();
+        List<Product> products = Product.findAll();
+        return ok(list.render(products));
     }
 
 

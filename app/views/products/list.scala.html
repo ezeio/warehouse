@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<!--
-<html>
-<head lang="en">
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
 
-
-</body>
-</html>
-    -->
-
-    @(products: List[Products])
+    @(products: List[Product])
     @main("Product catalogue"){
 
     <h2>All products</h2>
@@ -28,15 +15,15 @@
             @for(product <- products){
                 <tr>
                     <td>
-                        <a href="@routes.products.details(product.ean)"></a>
+                        <a href="@routes.Products.details(product.ean)"> @product.ean</a>
                     </td>
 
                     <td>
-                        <a href="@routes.products.details(product.ean)"></a>
+                        <a href="@routes.Products.details(product.ean)">@product.ean</a>
                     </td>
 
                     <td>
-                        <a href="@routes.products.details(product.ean)"></a>
+                        <a href="@routes.Products.details(product.ean)">@product.ean</a>
                     </td>
 
                 </tr>

@@ -6,10 +6,12 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import play.data.validation.Constraints;
 /**
  * Created by Eze on 13/05/2015.
  */
 public class Product {
+
 
     public String ean;
     public String name;
@@ -21,7 +23,8 @@ public class Product {
 
 
     static {
-        products = new ArrayListProduct<Product>();
+
+        products = new ArrayList<Product>();
         products.add(new Product("1111111111111", "Paperclips 1", "Paperclips 1 description"));
 
         products.add(new Product("2222222222222", "Paperclips 2", "Paperclips 2 description"));
@@ -47,14 +50,14 @@ public class Product {
     }
 
     public static List<Product> findAll() {
-        return new ArreayList<Product>(products);
+        return new ArrayList<Product>(products);
     }
 
 
     public static Product findByEan(String ean) {
         for (Product candidate : products) {
             if (candidate.ean.equals(ean)) {
-                return candidate;,
+                return candidate;
             }
         }
         return null;
